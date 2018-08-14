@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main()
+{
+    int num, fact=1, temp, sum=0, a[20], j=0, i;
+    printf("Enter a number\n");
+    scanf("%d",&num);
+    temp=num;
+    for(i=1;i<=num;i++)
+    {
+        fact=fact*i;
+    }
+    printf("The factorial of the number is: %d\n", fact);
+    while(fact>0)
+    {
+        a[j]=fact%10;
+        j++;
+        fact=fact/10;
+    }
+    for(i=0;i<j;i++)
+    {
+        sum=sum+a[i];
+    }
+    printf("The sum of the digits of the factorial is: %d\n", sum);
+    if(sum==temp)
+    {
+        printf("%d is a strong number\n", temp);
+    }
+    else
+    {
+        printf("%d is not a strong number", temp);
+    }
+    return 0;
+}
