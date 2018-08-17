@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define MAX 100
+int lookup[MAX];
+int fib(int n);
+void initialise();
+int main()
+{
+    int n=2;
+    printf("%d", fib(n));
+}
+void initialise()
+{
+    int i;
+    for(i=0;i<MAX;i++)
+        lookup[i]=NULL;
+}
+
+int fib(int n)
+{
+    if(lookup[n]==NULL)
+    {
+        if(n<=1)
+            return n;
+        return fib(n-1)+fib(n-2);
+    }
+}
